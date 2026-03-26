@@ -1,17 +1,14 @@
-package org.example;
+public class HelloApp {
+    public static void main(String[] args) {
+        // 1. Set a default name
+        String name = "World";
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        // 2. Check if the user provided a name via command-line arguments
+        if (args.length > 0) {
+            name = args[0]; // Use the first argument provided
         }
+
+        // 3. Print the greeting to the console
+        System.out.println("Hello, " + name + "!");
     }
 }
